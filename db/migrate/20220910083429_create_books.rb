@@ -2,9 +2,9 @@ class CreateBooks < ActiveRecord::Migration[6.1]
   def change
     create_table :books do |t|
       t.string :title
-      t.string :author
+      t.string :authors
       t.string :publisher
-      t.datetime :publishedDate
+      t.string :publishedDate
       t.string :description
       t.integer :pageCount
       t.integer :averageRating
