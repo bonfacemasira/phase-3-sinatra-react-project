@@ -2,10 +2,10 @@ puts "🌱 Seeding spices..."
 
 # Seed your database here
 
-books = ["wr3lCEKeuXAC", "KfBlcGzyvf8C", "JAKUNrNFnkY", "tCMsEAAAQBAJ", "_alxtgAACAAJ", "qTdrHfNrwP8", "5V_6DwAAQBAJ", "-v8HDAAAQBAJ", "9CFGvgAACAAJ", "5hqtRN8nsqwC"]
+books = ["wr3lCEKeuXAC", "KfBlcGzyvf8C", "7L2TtgEACAAJ", "tCMsEAAAQBAJ", "o-xztgAACAAJ", "Qx1pLwEACAAJ", "5V_6DwAAQBAJ", "-v8HDAAAQBAJ", "9CFGvgAACAAJ"]
 
 books.each do |book|
-    response = RestClient.get "https://www.googleapis.com/books/v1/volumes/wr3lCEKeuXAC"
+    response = RestClient.get "https://www.googleapis.com/books/v1/volumes/#{book}"
 
     book_hash = JSON.parse(response)
 
@@ -18,7 +18,7 @@ books.each do |book|
         pageCount: book_hash["volumeInfo"]["pageCount"],
         averageRating: book_hash["volumeInfo"]["averageRating"],
         ratingsCount: book_hash["volumeInfo"]["ratingsCount"],
-        imageLinks: book_hash["volumeInfo"]["imageLinks"]["thumbnail"], #thumbnail
+        imageLinks: book_hash["volumeInfo"]["imageLinks"]["thumbnail"],
         language: book_hash["volumeInfo"]["language"]
     )
 end
