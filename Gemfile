@@ -22,7 +22,7 @@ gem "activerecord", "~> 6.1"
 
 # Configures common Rake tasks for working with Active Record
 # https://github.com/sinatra-activerecord/sinatra-activerecord
-gem "sinatra-activerecord", "~> 2.0"
+# gem "sinatra-activerecord", "~> 2.0"
 
 # Run common tasks from the command line
 # https://github.com/ruby/rake
@@ -58,3 +58,5 @@ end
 group :production do
   gem 'pg', '~> 1.4', '>= 1.4.3'
 end
+
+# gem 'sinatra-contrib', '~> 2.2', '>= 2.2.2',require: false
